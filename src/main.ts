@@ -110,8 +110,7 @@ export const compute4 = (data: ResultItem[]): Data4 => {
         if (existLang.includes(item)) {
             const idx = data.findIndex(el => el.lang === item)
             acc[item] = { id: data[idx].id, text: data[idx].text }
-        }
-        else {
+        } else {
             acc[item] = null
         }
         return acc
