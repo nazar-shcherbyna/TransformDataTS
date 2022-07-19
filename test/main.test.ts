@@ -37,7 +37,7 @@ describe('tests 1,2,3,4', () => {
             { lang: 'fr', id: 3, text: 'Salut!' }
         ])
     })
-    test('compute4: reverse transformation', () => { 
+    test('compute4: reverse transformation with null if value isn\'t exist', () => { 
         const testVal = [
             {lang: 'uk', id: 1, text: 'Привіт!'}
         ]
