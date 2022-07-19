@@ -22,6 +22,8 @@ describe('tests 1,2,3,4', () => {
         expect(compute23(testVal)).toEqual([
             { lang: 'en', id: 4, text: 'Hallo!' }
         ])
+        expect(compute23(testVal)).not.toContain(null)
+        expect(compute23(testVal)).not.toContain(undefined)
     })
     test('compute3: filter unnecessary lang', () => {
         const testVal = {
