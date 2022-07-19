@@ -107,8 +107,8 @@ export const compute4 = (data: ResultItem[]): Data4 => {
     const existLang = data.map((el) => el.lang)
    
     const result4 = lang.reduce<Data4>((acc, item) => {
-        const idx = data.findIndex(el => el.lang === item)
         if (existLang.includes(item)) {
+            const idx = data.findIndex(el => el.lang === item)
             acc[item] = { id: data[idx].id, text: data[idx].text }
         }
         else {
