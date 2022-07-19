@@ -8,7 +8,7 @@ type Lang = string;
 type Data1 = Record<Lang, DataField>;
 type Data2 = Record<Lang, DataField | null | undefined >;
 
-export interface ResultItem {
+interface ResultItem {
     lang: string;
     id: number;
     text: string;
@@ -16,7 +16,7 @@ export interface ResultItem {
 
 // ---------
 
-export const data1: Data1 = {
+const data1: Data1 = {
     uk: { id: 1, text: 'Привіт!' },
     en: { id: 2, text: 'Hello!' },
     fr: { id: 3, text: 'Salut!' }
@@ -28,7 +28,7 @@ const expectedResult1: ResultItem[] = [
     { lang: 'fr', id: 3, text: 'Salut!' }
 ];
 
-export const data2: Data2 = {
+const data2: Data2 = {
     uk: { id: 1, text: 'Привіт!' },
     en: null,
     fr: undefined
@@ -38,7 +38,7 @@ const expectedResult2: ResultItem[] = [
     { lang: 'uk', id: 1, text: 'Привіт!' }
 ];
 
-export const data3: Data2 = {
+const data3: Data2 = {
     uk: { id: 1, text: 'Привіт!' },
     ru: { id: 4, text: 'Привет!' },
     en: { id: 2, text: 'Hello!' },
@@ -52,7 +52,7 @@ const expectedResult3: ResultItem[] = [
     { lang: 'fr', id: 3, text: 'Salut!' }
 ];
 
-export const data4: ResultItem[] = [
+const data4: ResultItem[] = [
     { lang: 'en', id: 2, text: 'Hello!' }
 ];
 
@@ -71,7 +71,7 @@ console.log(expectedResult3);
 console.log('Expected14:');
 console.log(expectedResult4);
 
-export const lang = ['en', 'uk', 'fr']
+const lang = ['en', 'uk', 'fr']
 
 export const compute1 = (data: Data1): ResultItem[] => {
     const result1: ResultItem[] = []
