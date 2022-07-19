@@ -1,7 +1,7 @@
 import { compute1, compute23, compute4 } from "../src/main";
 
 describe('tests 1,2,3,4', () => {
-    test('compute1', () => {
+    test('compute1: transformation and sorting', () => {
         const testVal = {
             fr: { id: 3, text: 'Salut!' },
             en: { id: 2, text: 'Hello!' },
@@ -13,7 +13,7 @@ describe('tests 1,2,3,4', () => {
             { lang: 'fr', id: 3, text: 'Salut!' }
         ])
     })
-    test('compute2', () => {
+    test('compute2: checking for null and undefined', () => {
         const testVal = {
             uk: null,
             en: { id: 4, text: 'Hallo!' },
@@ -23,7 +23,7 @@ describe('tests 1,2,3,4', () => {
             { lang: 'en', id: 4, text: 'Hallo!' }
         ])
     })
-    test('compute3', () => {
+    test('compute3: filter unnecessary lang', () => {
         const testVal = {
             uk: { id: 1, text: 'Привіт!' },
             es: { id: 4, text: 'Hola!' },
@@ -37,7 +37,7 @@ describe('tests 1,2,3,4', () => {
             { lang: 'fr', id: 3, text: 'Salut!' }
         ])
     })
-    test('compute4', () => { 
+    test('compute4: reverse transformation', () => { 
         const testVal = [
             {lang: 'uk', id: 1, text: 'Привіт!'}
         ]
