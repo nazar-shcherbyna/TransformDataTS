@@ -104,9 +104,7 @@ export const compute23 = (data: Data2): ResultItem[] => {
 
 export const compute4 = (data: ResultItem[]): Data2 => {
     const existLang = data.map((el) => el.lang)
-    console.log('existLang',existLang);
-    
-
+   
     const result4 = lang.reduce<Data2>((acc, item) => {
         const idx = data.findIndex(el => el.lang === item)
         if (existLang.includes(item)) {
