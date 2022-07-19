@@ -7,6 +7,7 @@ describe('tests 1,2,3,4', () => {
             en: { id: 2, text: 'Hello!' },
             uk: { id: 1, text: 'Привіт!' }
         };
+        expect(compute1(testVal)).toBeDefined()
         expect(compute1(testVal)).toEqual([
             { lang: 'en', id: 2, text: 'Hello!' },
             { lang: 'uk', id: 1, text: 'Привіт!' },
@@ -19,6 +20,7 @@ describe('tests 1,2,3,4', () => {
             en: { id: 4, text: 'Hallo!' },
             fr: undefined
         };
+        expect(compute23(testVal)).toBeDefined()
         expect(compute23(testVal)).toEqual([
             { lang: 'en', id: 4, text: 'Hallo!' }
         ])
@@ -33,6 +35,7 @@ describe('tests 1,2,3,4', () => {
             en: { id: 2, text: 'Hello!' },
             fr: { id: 3, text: 'Salut!' }
         }; 
+        expect(compute23(testVal)).toBeDefined()
         expect(compute23(testVal)).toEqual([
             { lang: 'en', id: 2, text: 'Hello!' },
             { lang: 'uk', id: 1, text: 'Привіт!' },
@@ -43,6 +46,7 @@ describe('tests 1,2,3,4', () => {
         const testVal = [
             {lang: 'uk', id: 1, text: 'Привіт!'}
         ]
+        expect(compute4(testVal)).toBeDefined()
         expect(compute4(testVal)).toEqual({
             uk: { id: 1, text: 'Привіт!' },
             en: null,
