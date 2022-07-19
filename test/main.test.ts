@@ -1,4 +1,4 @@
-import { compute1, compute23, compute4, data1, data2, data3, data4, lang } from "../src/main";
+import { compute1, compute23, compute4 } from "../src/main";
 
 describe('tests 1,2,3,4', () => {
     test('compute1', () => {
