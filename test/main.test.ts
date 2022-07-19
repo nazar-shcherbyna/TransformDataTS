@@ -8,6 +8,7 @@ describe('tests 1,2,3,4', () => {
             uk: { id: 1, text: 'Привіт!' }
         };
         expect(compute1(testVal)).toBeDefined()
+        expect(compute1(testVal)).toBeInstanceOf(Array)
         expect(compute1(testVal)).toEqual([
             { lang: 'en', id: 2, text: 'Hello!' },
             { lang: 'uk', id: 1, text: 'Привіт!' },
@@ -21,6 +22,7 @@ describe('tests 1,2,3,4', () => {
             fr: undefined
         };
         expect(compute23(testVal)).toBeDefined()
+        expect(compute23(testVal)).toBeInstanceOf(Array)
         expect(compute23(testVal)).toEqual([
             { lang: 'en', id: 4, text: 'Hallo!' }
         ])
@@ -36,6 +38,7 @@ describe('tests 1,2,3,4', () => {
             fr: { id: 3, text: 'Salut!' }
         }; 
         expect(compute23(testVal)).toBeDefined()
+        expect(compute23(testVal)).toBeInstanceOf(Array)
         expect(compute23(testVal)).toEqual([
             { lang: 'en', id: 2, text: 'Hello!' },
             { lang: 'uk', id: 1, text: 'Привіт!' },
@@ -47,6 +50,7 @@ describe('tests 1,2,3,4', () => {
             {lang: 'uk', id: 1, text: 'Привіт!'}
         ]
         expect(compute4(testVal)).toBeDefined()
+        expect(compute4(testVal)).toBeInstanceOf(Object)
         expect(compute4(testVal)).toEqual({
             uk: { id: 1, text: 'Привіт!' },
             en: null,
