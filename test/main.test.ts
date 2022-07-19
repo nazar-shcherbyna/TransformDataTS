@@ -1,4 +1,4 @@
-import { compute1, compute2, compute3, compute4 } from "../src/main";
+import { compute1, compute23, compute4 } from "../src/main";
 
 describe('tests 1,2,3,4', () => {
     test('compute1: transformation and sorting', () => {
@@ -19,7 +19,7 @@ describe('tests 1,2,3,4', () => {
             en: { id: 4, text: 'Hallo!' },
             fr: undefined
         };
-        expect(compute2(testVal)).toEqual([
+        expect(compute23(testVal)).toEqual([
             { lang: 'en', id: 4, text: 'Hallo!' }
         ])
     })
@@ -31,7 +31,7 @@ describe('tests 1,2,3,4', () => {
             en: { id: 2, text: 'Hello!' },
             fr: { id: 3, text: 'Salut!' }
         }; 
-        expect(compute3(testVal)).toEqual([
+        expect(compute23(testVal)).toEqual([
             { lang: 'en', id: 2, text: 'Hello!' },
             { lang: 'uk', id: 1, text: 'Привіт!' },
             { lang: 'fr', id: 3, text: 'Salut!' }

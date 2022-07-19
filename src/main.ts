@@ -88,22 +88,7 @@ export const compute1 = (data: Data1): ResultItem[] => {
     return result1
 }
 
-export const compute2 = (data: Data2): ResultItem[] => {
-    const result23: ResultItem[] = []
-
-    lang.forEach((l) => {
-        if (data[l]) {
-            result23.push({
-                lang: l, 
-                id: data[l]!.id, 
-                text: data[l]!.text 
-            })
-        }
-    })
-    return result23
-}
-
-export const compute3 = (data: Data1): ResultItem[] => {
+export const compute23 = (data: Data1 | Data2): ResultItem[] => {
     const result23: ResultItem[] = []
 
     lang.forEach((l) => {
@@ -137,8 +122,8 @@ export const compute4 = (data: ResultItem[]): Data4 => {
 console.log('Result1:');
 console.log(compute1(data1));
 console.log('Result2:');
-console.log(compute2(data2));
+console.log(compute23(data2));
 console.log('Result3:');
-console.log(compute3(data3));
+console.log(compute23(data3));
 console.log('Result4:');
 console.log(compute4(data4));
