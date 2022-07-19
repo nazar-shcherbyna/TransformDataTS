@@ -6,7 +6,8 @@ interface DataField {
 type Lang = string;
 
 type Data1 = Record<Lang, DataField>;
-type Data2 = Record<Lang, DataField | null | undefined >;
+type Data23 = Record<Lang, DataField | null | undefined>;
+type Data4 = Record<Lang, DataField | null>;
 
 interface ResultItem {
     lang: string;
@@ -28,7 +29,7 @@ const expectedResult1: ResultItem[] = [
     { lang: 'fr', id: 3, text: 'Salut!' }
 ];
 
-const data2: Data2 = {
+const data2: Data23 = {
     uk: { id: 1, text: 'Привіт!' },
     en: null,
     fr: undefined
@@ -38,7 +39,7 @@ const expectedResult2: ResultItem[] = [
     { lang: 'uk', id: 1, text: 'Привіт!' }
 ];
 
-const data3: Data2 = {
+const data3: Data23 = {
     uk: { id: 1, text: 'Привіт!' },
     ru: { id: 4, text: 'Привет!' },
     en: { id: 2, text: 'Hello!' },
@@ -56,7 +57,7 @@ const data4: ResultItem[] = [
     { lang: 'en', id: 2, text: 'Hello!' }
 ];
 
-const expectedResult4: Data2 = {
+const expectedResult4: Data4 = {
     uk: { id: 1, text: 'Привіт!' },
     en: null,
     fr: null
@@ -87,7 +88,7 @@ export const compute1 = (data: Data1): ResultItem[] => {
     return result1
 }
 
-export const compute23 = (data: Data2): ResultItem[] => {
+export const compute23 = (data: Data23): ResultItem[] => {
     const result23: ResultItem[] = []
 
     lang.forEach((l) => {
@@ -102,10 +103,10 @@ export const compute23 = (data: Data2): ResultItem[] => {
     return result23
 }
 
-export const compute4 = (data: ResultItem[]): Data2 => {
+export const compute4 = (data: ResultItem[]): Data4 => {
     const existLang = data.map((el) => el.lang)
    
-    const result4 = lang.reduce<Data2>((acc, item) => {
+    const result4 = lang.reduce<Data4>((acc, item) => {
         const idx = data.findIndex(el => el.lang === item)
         if (existLang.includes(item)) {
             acc[item] = { id: data[idx].id, text: data[idx].text }
